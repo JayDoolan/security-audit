@@ -8,26 +8,39 @@ Built and maintained by the team behind [SecuriVibe](https://securivibe.com).
 
 ## Install
 
-### macOS / Linux
+### As a plugin (recommended)
+
+```
+/plugin marketplace add JayDoolan/security-audit
+/plugin install security-audit@securivibe
+```
+
+Handles updates for you — run `/plugin marketplace update` to pull the latest phases.
+
+### As a plain skill
+
+Copy the folder into your project instead. No plugin system involved.
+
+#### macOS / Linux
 
 ```bash
 git clone --depth 1 https://github.com/JayDoolan/security-audit .claude/skills/security-audit \
   && rm -rf .claude/skills/security-audit/.git
 ```
 
-### Windows (PowerShell)
+#### Windows (PowerShell)
 
 ```powershell
 git clone --depth 1 https://github.com/JayDoolan/security-audit .claude/skills/security-audit
 Remove-Item -Recurse -Force .claude/skills/security-audit/.git
 ```
 
-### Install globally instead
+#### Install globally instead
 
 Swap `.claude/skills/security-audit` for `~/.claude/skills/security-audit` (macOS/Linux) or
 `$HOME\.claude\skills\security-audit` (Windows) to make it available in every project.
 
-### Updating
+#### Updating
 
 Delete the folder and run the install command again.
 
@@ -109,13 +122,20 @@ Framework-agnostic. Detection patterns cover JavaScript/TypeScript (Next.js, Exp
 ## Repository Layout
 
 ```
-SKILL.md          # entry point: menu, routing, severity scale, report template
+SKILL.md               # entry point: menu, routing, severity scale, report template
 phases/
   01-secrets.md
   02-auth-sessions.md
   …
   10-logging.md
+.claude-plugin/
+  plugin.json          # makes this repo installable as a plugin
+  marketplace.json     # makes this repo its own single-plugin marketplace
 ```
+
+The repo works both ways from one copy of the content: the root `SKILL.md` is the plugin's skill, and
+it's also what you get if you clone the folder directly. There's no duplicated phase content to keep
+in sync.
 
 To edit a phase, edit its file. To add one, add the file and register it in the routing table in `SKILL.md`.
 

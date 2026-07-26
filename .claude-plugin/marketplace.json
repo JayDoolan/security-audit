@@ -1,0 +1,15 @@
+{
+  "name": "securivibe",
+  "owner": {
+    "name": "SecuriVibe",
+    "email": "hello@securivibe.com",
+    "url": "https://securivibe.com"
+  },
+  "plugins": [
+    {
+      "name": "security-audit",
+      "source": ".",
+      "description": "Phase-based security audit for any codebase. Choose from ten security domains and only the selected phases are loaded."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "security-audit",
+  "displayName": "Security Audit",
+  "version": "2.0.0",
+  "description": "Phase-based security audit for any codebase. Pick from ten security domains — secrets, auth, authorization, data protection, injection, API limits, headers, dependencies, encryption, and audit logging — and only the phases you select are loaded.",
+  "author": {
+    "name": "Jay Doolan",
+    "url": "https://github.com/JayDoolan"
+  },
+  "homepage": "https://securivibe.com",
+  "repository": "https://github.com/JayDoolan/security-audit",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "audit",
+    "owasp",
+    "vulnerabilities",
+    "code-review",
+    "secrets",
+    "authentication",
+    "authorization"
+  ]
+}
